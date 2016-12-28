@@ -532,6 +532,33 @@ au CursorHoldI * stopinsert
 "endif
 ""}}}
 
+
+" Web
+
+let g:www_urls = {
+  \ 'vim' : 'http://www.vim.org',
+  \ }
+let g:www_engines = {
+  \ 'youtube' : 'https://www.youtube.com/results?search_query=',
+  \ 'google'  : 'https://google.co.uk/search?q=',
+  \ 'scholar' : 'https://scholar.google.co.uk/scholar?q=',
+  \ 'library' : 'http://bath-ac-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&mode=Basic&tab=local&indx=1&dum=true&srt=rank&vid=44BAT_VU1&frbg=&tb=t&vl%28freeText0%29='
+  \ }
+let g:www_default_search_engine = 'google'
+let g:www_shortcut_engines = {
+  \ 'google': ['Google', '<leader>g', 'Googlec', '<leader>gc'],
+  \ 'scholar': ['Scholar', '<leader>s', 'Scholarc', '<leader>sc'],
+  \ 'library': ['Library', '<leader>l', 'Libraryc', '<leader>lc']
+  \}
+let g:www_sessions = {
+  \ 'dev' : ['vim', 'http://stackoverflow.com'],
+  \ }
+":Wsession vim
+
+" Use google chrome
+let g:netrw_browsex_viewer = $CHROMEDIR/'chrome.exe'
+
+
 " Ultisnips
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -540,10 +567,6 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 let g:UltiSnipsListSnippets="<C-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author="Andrew Tolmie"
-
-" Use google chrome
-let g:netrw_browsex_viewer = $CHROMEDIR/'chrome.exe'
-
 
 " Move a snippet to a new file or append to an existing file
 :command! -bang -range -nargs=1 -complete=file MoveWrite  <line1>,<line2>write<bang> <args> | <line1>,<line2>delete _
