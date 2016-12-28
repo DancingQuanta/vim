@@ -544,15 +544,6 @@ let g:snips_author="Andrew Tolmie"
 " Use google chrome
 let g:netrw_browsex_viewer = $CHROMEDIR/'chrome.exe'
 
-" Search google
-fun! Google()
-    let keyword = expand("<cword>")
-    let url = "https://www.google.com/search?q=" . keyword
-    let path = $CHROMEDIR 
-    exec 'silent !"' . path . 'chrome.exe" ' . url
-endfun
-nmap <leader>g :call Google()<CR>
-vmap <leader>g :call Google()<CR>
 
 " Move a snippet to a new file or append to an existing file
 :command! -bang -range -nargs=1 -complete=file MoveWrite  <line1>,<line2>write<bang> <args> | <line1>,<line2>delete _
