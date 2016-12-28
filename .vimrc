@@ -14,12 +14,15 @@ call dein#add('Shougo/dein.vim')
 "    \     'unix': 'gmake',
 "    \    },
 "    \ })
-call dein#add('Shougo/unite.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('zirrostig/vim-schlepp')
-call dein#add('rafaqz/citation.vim')
-"call dein#add('vim-scripts/vim.ergonomic')
+call dein#add('Shougo/unite.vim')
+"call dein#add('rafaqz/citation.vim')
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
+"call dein#add('itchyny/calendar.vim')
+"call dein#add('vimoutliner/vimoutliner')
 call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
 "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
 call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
@@ -32,12 +35,9 @@ call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
 call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
 call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('SirVer/ultisnips')
-call dein#add('honza/vim-snippets')
-"call dein#add('vimoutliner/vimoutliner')
-"call dein#add('itchyny/calendar.vim')
 call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['rst', 'restructuredtext']})
 call dein#add('rhysd/vim-grammarous')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc', 'rst', 'restructuredText']}
+call dein#add('waiting-for-dev/vim-www')
 call dein#end()
 filetype plugin indent on
 "}}}
