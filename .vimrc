@@ -18,12 +18,12 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('zirrostig/vim-schlepp')
 call dein#add('Shougo/unite.vim')
-"call dein#add('rafaqz/citation.vim')
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
 "call dein#add('itchyny/calendar.vim')
-"call dein#add('vimoutliner/vimoutliner')
+call dein#add('vimoutliner/vimoutliner')
 call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
+call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
 "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
 call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
 call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
@@ -40,6 +40,7 @@ call dein#add('rhysd/vim-grammarous')", {'lazy': 1, 'on_ft': ['md', 'markdown','
 call dein#add('waiting-for-dev/vim-www')
 call dein#end()
 filetype plugin indent on
+"syntax on
 "}}}
 
 let g:pandoc#keyboard#use_default_mappings=0
@@ -429,6 +430,8 @@ command -nargs=+ -bang -bar -complete=file Tabview tabe | view <args> | setl nom
 "noremap <space><space> <leader><leader>
 "nmap S :w!<CR>
 
+" hard tab
+inoremap <S-Tab> <C-V><Tab>
 " Get out of insert mode
 inoremap kj <Esc>
 
@@ -512,6 +515,8 @@ set wrap
 set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 "set list
 
+au BufReadPost * syntax match nonascii "[^\u0000-\u007F]"
+
 " Automatically leave insert mode after 'updatetime' milliseconds of inaction
 au CursorHoldI * stopinsert
 " }}}
@@ -531,7 +536,6 @@ au CursorHoldI * stopinsert
 	"set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 "endif
 ""}}}
-
 
 " Web
 
@@ -580,27 +584,6 @@ noremap [unite] <NOP>
 let g:unite_source_grep_default_opts =
   \ '-i --smart-case --nogroup --nocolor --ignore-dir={.git, .cabal-sandbox, .stack-work}'
 
-" Citation.vim
-
-" Use Zotero for bibtex management
-let g:citation_vim_zotero_folder=["~/AppData/Roaming/Zotero/Zotero/Profiles/qr6r9hc4.default/zotero/"]
-let g:citation_vim_mode="zotero"
-
-"" Insert citation
-nnoremap <silent>[unite]c :<C-u>Unite -buffer-name=citation -start-insert -default-action=append bibtex<cr> "" Open citation file/url "nnoremap <silent>[unite]co :<C-u>Unite -input=<C-R><C-W> -default-action=start -force-immediately citation/file<cr>
-" Browse file folder of a citation
-nnoremap <silent>[unite]cf :<C-u>Unite -input=<C-R><C-W> -default-action=file -force-immediately citation/file<cr>
-" To view all citation information from a citation under the cursor
-nnoremap <silent>[unite]ci :<C-u>Unite -input=<C-R><C-W> -default-action=preview -force-immediately citation/combined<cr>
-" To preview, append, yank any other citation data from unite:
-nnoremap <silent>[unite]cp :<C-u>Unite -buffer-name=citation -default-action=append -auto-preview citation/XXXXXX<cr>
-"" Fulltext searching
-" Search for the word under the cursor
-nnoremap <silent>[unite]cs :<C-u>Unite -default-action=yank citation/key:<C-R><C-W><cr>
-" Selected words in visual mode (notice that spaces have to be escaped) :
-vnoremap <silent>[unite]cs :<C-u>exec "Unite -default-action=start citation/key:" . escape(@*,' ') <cr>
-" Type search terms in the prompt:
-nnoremap <silent>[unite]cx :<C-u>exec "Unite -default-action=start citation/key:" . escape(input('Search Key : '),' ') <cr>
 
 "" Syntastic
 "set statusline+=%#warningmsg#
@@ -609,7 +592,7 @@ nnoremap <silent>[unite]cx :<C-u>exec "Unite -default-action=start citation/key:
 let g:syntastic_python_pylint_args = '--rcfile=$HOME/.pylintrc' 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_debug=3
 "
@@ -637,9 +620,12 @@ nmap <silent> ]e  <Plug>LocationNext
 
 " Actions in cygwin
 if has("win32unix")
+  "set shellxquote = "("
+  "set shellxescape = "\""
 	" Clip to clipboard
 	:command -range Clip <line1>,<line2>w !cat > /dev/clipboard
-	vnoremap <silent> <leader>c :w !cat > /dev/clipboard<CR>
+  "vnoremap <silent> <leader>c :w !cat > /dev/clipboard<CR>
+  vnoremap <silent> <leader>c :Clip<CR>
 
 	" Paste clipboard in
 	function! Getclip()
