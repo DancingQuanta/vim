@@ -35,9 +35,9 @@ call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['md', 'markd
 call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['rst', 'restructuredtext']})
 call dein#add('rhysd/vim-grammarous')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc', 'rst', 'restructuredText']}
 call dein#add('waiting-for-dev/vim-www')
-call dein#add('tmhedberg/SimpylFold', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
+call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['py', 'python']})
+"call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
+"call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
 call dein#end()
