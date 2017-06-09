@@ -39,6 +39,7 @@ call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
+call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
 call dein#end()
 filetype plugin indent on
 syntax on
