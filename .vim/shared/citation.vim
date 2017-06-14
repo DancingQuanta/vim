@@ -3,6 +3,7 @@
 " Use Zotero for bibtex management
 let g:citation_vim_mode='zotero'
 let g:citation_vim_zotero_path='~/AppData/Roaming/Zotero/Zotero/Profiles/qr6r9hc4.default/zotero'
+let g:citation_vim_zotero_attachment_path="~/OneDrive/papers"
 
 let g:citation_vim_cache_path='~/.vim/tmp/'
 
