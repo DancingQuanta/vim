@@ -3,46 +3,57 @@ filetype off                  " required
 set rtp^=~/.vim/dein/repos/github.com/Shougo/dein.vim " path to dein.vim
 
 " dein: {{{
-call dein#begin(expand('~/.vim/dein')) " plugins' root path
-call dein#add('Shougo/dein.vim')
-"call dein#add('Shougo/vimproc.vim', {
-"    \ 'build': {
-"    \     'windows': 'tools\\update-dll-mingw',
-"    \     'cygwin': 'make -f make_cygwin.mak',
-"    \     'mac': 'make -f make_mac.mak',
-"    \     'linux': 'make',
-"    \     'unix': 'gmake',
-"    \    },
-"    \ })
-call dein#add('tpope/vim-fugitive')
-call dein#add('scrooloose/nerdcommenter')
-call dein#add('zirrostig/vim-schlepp')
-"call dein#add('Shougo/denite.nvim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/unite-outline')
-call dein#add('SirVer/ultisnips')
-call dein#add('honza/vim-snippets')
-"call dein#add('itchyny/calendar.vim')
-call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc','rst','restructuredtext']})
-call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc','rst','restructuredtext']})
-"call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-call dein#add('vim-pandoc/vim-pandoc-after')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-"call dein#add('prashanthellina/follow-markdown-links', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['rst', 'restructuredtext']})
-call dein#add('rhysd/vim-grammarous', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc', 'rst', 'restructuredtext']})
-call dein#add('waiting-for-dev/vim-www')
-call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['py', 'python']})
-"call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
-"call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
-"call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
-"call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
-call dein#end()
+if dein#load_state(expand('~/.vim/dein'))
+  call dein#begin(expand('~/.vim/dein')) " plugins' root path
+
+  " Let dein manage dein
+  call dein#add('Shougo/dein.vim')
+  "call dein#add('Shougo/vimproc.vim', {
+  "    \ 'build': {
+  "    \     'windows': 'tools\\update-dll-mingw',
+  "    \     'cygwin': 'make -f make_cygwin.mak',
+  "    \     'mac': 'make -f make_mac.mak',
+  "    \     'linux': 'make',
+  "    \     'unix': 'gmake',
+  "    \    },
+  "    \ })
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('zirrostig/vim-schlepp')
+  "call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/unite-outline')
+  call dein#add('SirVer/ultisnips')
+  call dein#add('honza/vim-snippets')
+  "call dein#add('itchyny/calendar.vim')
+  call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc','rst','restructuredtext']})
+  call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc','rst','restructuredtext']})
+  "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
+  call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
+  call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
+  call dein#add('vim-pandoc/vim-pandoc-after')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
+  call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
+  "call dein#add('prashanthellina/follow-markdown-links', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
+  call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['rst', 'restructuredtext']})
+  call dein#add('rhysd/vim-grammarous', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc', 'rst', 'restructuredtext']})
+  call dein#add('waiting-for-dev/vim-www')
+  call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['py', 'python']})
+  "call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
+  "call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
+  "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
+  "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
+  call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
+  call dein#end()
+  call dein#save_state()
+endif
+
 filetype plugin indent on
-syntax on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 "}}}
 
 " === ErgoVim key mappings === {{{
