@@ -13,6 +13,9 @@ setlocal fileformat=unix
 setlocal spell
 setlocal wrap
 
+" Pandoc
+let g:pandoc#keyboard#use_default_mappings=0
+let g:pandoc#keyboard#display_motions=0
 
 "let g:pandoc#syntax#conceal#urls = 1
 " Interferes with follow-markdown-link

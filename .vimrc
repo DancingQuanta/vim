@@ -45,9 +45,6 @@ filetype plugin indent on
 "syntax on
 "}}}
 
-let g:pandoc#keyboard#use_default_mappings=0
-let g:pandoc#keyboard#display_motions=0
-
 " === ErgoVim key mappings === {{{
 
 " http://www.hxa.name/articles/content/ergovim-key-mappings_hxa7241_2010.html
