@@ -3,47 +3,32 @@ filetype off                  " required
 set rtp^=~/.vim/dein/repos/github.com/Shougo/dein.vim " path to dein.vim
 
 " dein: {{{
-call dein#begin(expand('~/.vim/dein')) " plugins' root path
-call dein#add('Shougo/dein.vim')
-"call dein#add('Shougo/vimproc.vim', {
-"    \ 'build': {
-"    \     'windows': 'tools\\update-dll-mingw',
-"    \     'cygwin': 'make -f make_cygwin.mak',
-"    \     'mac': 'make -f make_mac.mak',
-"    \     'linux': 'make',
-"    \     'unix': 'gmake',
-"    \    },
-"    \ })
-call dein#add('Shougo/unite.vim')
-call dein#add('tpope/vim-fugitive')
-call dein#add('scrooloose/nerdcommenter')
-call dein#add('zirrostig/vim-schlepp')
-call dein#add('rafaqz/citation.vim')
-"call dein#add('vim-scripts/vim.ergonomic')
-call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-"call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-call dein#add('vim-pandoc/vim-pandoc-after')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-"call dein#add('prashanthellina/follow-markdown-links', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-call dein#add('tmhedberg/SimpylFold', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
-"call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
-call dein#add('SirVer/ultisnips')
-call dein#add('honza/vim-snippets')
-"call dein#add('vimoutliner/vimoutliner')
-"call dein#add('itchyny/calendar.vim')
-call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['rst', 'restructuredtext']})
-call dein#add('rhysd/vim-grammarous')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc', 'rst', 'restructuredText']}
-call dein#end()
-filetype plugin indent on
-"}}}
+if dein#load_state(expand('~/.vim/dein'))
+  call dein#begin(expand('~/.vim/dein')) " plugins' root path
 
-let g:pandoc#keyboard#use_default_mappings=0
-let g:pandoc#keyboard#display_motions=0
+  " Let dein manage dein
+  call dein#add('Shougo/dein.vim')
+  "call dein#add('Shougo/vimproc.vim', {
+  "    \ 'build': {
+  "    \     'windows': 'tools\\update-dll-mingw',
+  "    \     'cygwin': 'make -f make_cygwin.mak',
+  "    \     'mac': 'make -f make_mac.mak',
+  "    \     'linux': 'make',
+  "    \     'unix': 'gmake',
+  "    \    },
+  "    \ })
+  call dein#end()
+  call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+"}}}
 
 " === ErgoVim key mappings === {{{
 
@@ -438,16 +423,6 @@ inoremap <Right> <Esc>l
 inoremap <Up>    <Esc>i
 inoremap <Down>  <Esc>k
 
-" Schlepp dragging plugin
-"vmap <unique> <up>    <Plug>SchleppUp
-"vmap <unique> <down>  <Plug>SchleppDown
-"vmap <unique> <left>  <Plug>SchleppLeft
-"vmap <unique> <right> <Plug>SchleppRight
-
-" Insert newline in normal mode
-"nmap <S-Enter> O<Esc>
-"nmap <CR> o<Esc>
-
 "split navigations
 nnoremap <C-J> <C-W><C-J> " move to the split below
 nnoremap <C-K> <C-W><C-K> " move to the split above
@@ -462,9 +437,6 @@ nnoremap <C-H> <C-W><C-H> " move to the split to the left
 "set undodir=~/.vim/undo
 set directory=~/.vim/tmp
 set tags=./tags;
-
-" Working in cygwin makes me forget to convert dos to unix...
-set ff=unix
 
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
@@ -516,110 +488,8 @@ set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 au CursorHoldI * stopinsert
 " }}}
 
-"" Statueline with git: {{{
-"" from https://github.com/spf13/spf13-vim/blob/master/.vimrc
-"if has('statusline')
-	"set laststatus=2
-	"" Broken down into easily includeable segments
-	"set statusline=%<%f\    " Filename
-	"set statusline+=%w%h%m%r " Options
-	"set statusline+=%{fugitive#statusline()} "  Git Hotness
-	"set statusline+=\ [%{&ff}/%Y]            " filetype
-	"set statusline+=\ %<%F          " current dir
-	"set statusline+=%#warningmsg#
-	"set statusline+=%*
-	"set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-"endif
-""}}}
-
-" Ultisnips
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-" <c-tab> doesn't work in gnome-terminal
-let g:UltiSnipsListSnippets="<C-tab>"
-let g:UltiSnipsEditSplit="vertical"
-let g:snips_author="Andrew Tolmie"
-
-" Use google chrome
-let g:netrw_browsex_viewer = $CHROMEDIR/'chrome.exe'
-
-" Search google
-fun! Google()
-    let keyword = expand("<cword>")
-    let url = "https://www.google.com/search?q=" . keyword
-    let path = $CHROMEDIR 
-    exec 'silent !"' . path . 'chrome.exe" ' . url
-endfun
-nmap <leader>g :call Google()<CR>
-vmap <leader>g :call Google()<CR>
-
-" Move a snippet to a new file or append to an existing file
-:command! -bang -range -nargs=1 -complete=file MoveWrite  <line1>,<line2>write<bang> <args> | <line1>,<line2>delete _
-:command! -bang -range -nargs=1 -complete=file MoveAppend <line1>,<line2>write<bang> >> <args> | <line1>,<line2>delete _
-
-" Unite.vim
-
-nmap <leader>u [unite]
-noremap [unite] <NOP>
-
-let g:unite_source_grep_default_opts =
-  \ '-i --smart-case --nogroup --nocolor --ignore-dir={.git, .cabal-sandbox, .stack-work}'
-
-" Citation.vim
-
-" Use Zotero for bibtex management
-let g:citation_vim_zotero_folder=["~/AppData/Roaming/Zotero/Zotero/Profiles/qr6r9hc4.default/zotero/"]
-let g:citation_vim_mode="zotero"
-
-"" Insert citation
-nnoremap <silent>[unite]c :<C-u>Unite -buffer-name=citation -start-insert -default-action=append bibtex<cr> "" Open citation file/url "nnoremap <silent>[unite]co :<C-u>Unite -input=<C-R><C-W> -default-action=start -force-immediately citation/file<cr>
-" Browse file folder of a citation
-nnoremap <silent>[unite]cf :<C-u>Unite -input=<C-R><C-W> -default-action=file -force-immediately citation/file<cr>
-" To view all citation information from a citation under the cursor
-nnoremap <silent>[unite]ci :<C-u>Unite -input=<C-R><C-W> -default-action=preview -force-immediately citation/combined<cr>
-" To preview, append, yank any other citation data from unite:
-nnoremap <silent>[unite]cp :<C-u>Unite -buffer-name=citation -default-action=append -auto-preview citation/XXXXXX<cr>
-"" Fulltext searching
-" Search for the word under the cursor
-nnoremap <silent>[unite]cs :<C-u>Unite -default-action=yank citation/key:<C-R><C-W><cr>
-" Selected words in visual mode (notice that spaces have to be escaped) :
-vnoremap <silent>[unite]cs :<C-u>exec "Unite -default-action=start citation/key:" . escape(@*,' ') <cr>
-" Type search terms in the prompt:
-nnoremap <silent>[unite]cx :<C-u>exec "Unite -default-action=start citation/key:" . escape(input('Search Key : '),' ') <cr>
-
-"" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-let g:syntastic_python_pylint_args = '--rcfile=$HOME/.pylintrc' 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_debug=3
-"
-" Fix syntastic error jumping
-function! <SID>LocationPrevious()
-  try
-    lprev
-  catch /^Vim\%((\a\+)\)\=:E553/
-    llast
-  endtry
-endfunction
-
-function! <SID>LocationNext()
-  try
-    lnext
-  catch /^Vim\%((\a\+)\)\=:E553/
-    lfirst
-  endtry
-endfunction
-
-nnoremap <silent> <Plug>LocationPrevious    :<C-u>exe 'call <SID>LocationPrevious()'<CR>
-nnoremap <silent> <Plug>LocationNext        :<C-u>exe 'call <SID>LocationNext()'<CR>
-nmap <silent> [e  <Plug>LocationPrevious
-nmap <silent> ]e  <Plug>LocationNext
+" Working in cygwin makes me forget to convert dos to unix...
+set ff=unix
 
 " Actions in cygwin
 if has("win32unix")

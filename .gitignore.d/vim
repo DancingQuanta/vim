@@ -2,11 +2,3 @@
 !/.gitignore.d/
 !/.gitignore.d/vim
 !.vimrc
-!/.vim/
-!/.vim/UltiSnips/
-!/.vim/UltiSnips/*
-!/.vim/after/
-!/.vim/after/ftplugin/
-!/.vim/after/ftplugin/*
-!/.vim/ftplugin/
-!/.vim/ftplugin/*
