@@ -4,9 +4,8 @@ let g:citation_vim_bibtex_file="~/OneDrive/papers/library.bib"
 let g:citation_vim_mode="bibtex"
 
 " Use Zotero for bibtex management
-"let g:citation_vim_mode='zotero'
-"let g:citation_vim_zotero_path='~\AppData\Roaming\Zotero\Zotero\Profiles\qr6r9hc4.default\zotero'
-"let g:citation_vim_zotero_path='C:\Users\andre\AppData\Roaming\Zotero\Zotero\Profiles\qr6r9hc4.default\zotero'
+let g:citation_vim_mode='zotero'
+let g:citation_vim_zotero_path='~/AppData/Roaming/Zotero/Zotero/Profiles/qr6r9hc4.default/zotero'
 
 let g:citation_vim_cache_path='$HOME/.vim/tmp/' 
 
