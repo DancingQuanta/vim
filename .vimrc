@@ -28,6 +28,7 @@ if dein#load_state(expand('~/.vim/dein'))
   "call dein#add('itchyny/calendar.vim')
   call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
   call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
+  call dein#add('vimwiki/vimwiki', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
   "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['markdown','pandoc']})
   call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
   call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
