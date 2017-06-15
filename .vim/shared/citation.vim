@@ -7,7 +7,7 @@ let g:citation_vim_mode="bibtex"
 let g:citation_vim_mode='zotero'
 let g:citation_vim_zotero_path='~/AppData/Roaming/Zotero/Zotero/Profiles/qr6r9hc4.default/zotero'
 
-let g:citation_vim_cache_path='$HOME/.vim/tmp/' 
+let g:citation_vim_cache_path='~/.vim/tmp/'
 
 "" Insert citation
 nnoremap <silent>[unite]c :<C-u>Unite -buffer-name=citation -start-insert -default-action=append citation/key<cr>
