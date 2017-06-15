@@ -41,7 +41,7 @@ call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['py', 'python']})
 "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
 call dein#end()
 filetype plugin indent on
-"syntax on
+syntax on
 "}}}
 
 " === ErgoVim key mappings === {{{
