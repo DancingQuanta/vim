@@ -26,22 +26,22 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
   "call dein#add('itchyny/calendar.vim')
-  call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc','rst','restructuredtext']})
-  call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc','rst','restructuredtext']})
-  "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-  call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-  call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-  call dein#add('vim-pandoc/vim-pandoc-after')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-  call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']}
-  "call dein#add('prashanthellina/follow-markdown-links', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc']})
-  call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['rst', 'restructuredtext']})
-  call dein#add('rhysd/vim-grammarous', {'lazy': 1, 'on_ft': ['md', 'markdown','pandoc', 'rst', 'restructuredtext']})
+  call dein#add('godlygeek/tabular', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
+  call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
+  "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['markdown','pandoc']})
+  call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
+  call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
+  call dein#add('vim-pandoc/vim-pandoc-after')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
+  call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
+  "call dein#add('prashanthellina/follow-markdown-links', {'lazy': 1, 'on_ft': ['markdown','pandoc']})
+  call dein#add('Rykka/riv.vim', {'lazy': 1, 'on_ft': ['restructuredtext']})
+  call dein#add('rhysd/vim-grammarous', {'lazy': 1, 'on_ft': ['markdown','pandoc', 'restructuredtext']})
   call dein#add('waiting-for-dev/vim-www')
-  call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['py', 'python']})
-  "call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['py', 'python']})
-  "call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['py', 'python']})
-  "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['py', 'python']})
-  "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['py', 'python']})
+  call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['python']})
+  "call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['python']})
+  "call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['python']})
+  "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['python']})
+  "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['python']})
   call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
   call dein#end()
   call dein#save_state()
