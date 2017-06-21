@@ -43,6 +43,7 @@ if dein#load_state(expand('~/.vim/dein'))
   "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['python']})
   "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['python']})
   call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
+  call dein#add('wannesm/wmgraphviz.vim', {'lazy': 1, 'on_ft': ['dot']})
   call dein#end()
   call dein#save_state()
 endif
