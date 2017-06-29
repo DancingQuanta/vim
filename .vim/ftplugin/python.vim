@@ -14,5 +14,7 @@ let g:SimpylFold_fold_docstring = 0
 
 let python_highlight_all=1
 
+let g:ultisnips_python_style='google'
+
 nnoremap <buffer> <F4> :exec '!python' shellescape(@%, 1)<cr>
 
