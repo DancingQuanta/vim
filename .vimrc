@@ -30,7 +30,8 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('rafaqz/citation.vim', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
   call dein#add('vimwiki/vimwiki')
   call dein#add('tbabej/taskwiki', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
-  call dein#add('farseer90718/vim-taskwarrior', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
+  call dein#add('farseer90718/vim-taskwarrior')
+  call dein#add('j-jith/vim-taskwarrior-kanban')
   "call dein#add('plasticboy/vim-markdown', {'lazy': 1, 'on_ft': ['markdown','pandoc']})
   call dein#add('vim-pandoc/vim-pandoc')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
   call dein#add('vim-pandoc/vim-pandoc-syntax')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
@@ -655,9 +656,12 @@ let wiki = {}
 let wiki.path = '~/Dropbox/wiki/'
 let wiki.ext = '.md'
 
-let g:vimwiki_list = [wiki]
+let test = {}
+let test.path = '~/Dropbox/test/'
 
+let g:vimwiki_list = [wiki, test]
 
+let g:taskwiki_syntax = 'markdown'
 
 "" Syntastic
 "set statusline+=%#warningmsg#
