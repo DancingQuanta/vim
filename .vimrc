@@ -518,6 +518,7 @@ set hidden
 set relativenumber
 set number
 set ttyfast
+set hlsearch
 
 highlight BadWhitespace ctermbg=red guibg=darkred
 highlight SpecialKey ctermbg=red guibg=darkred
