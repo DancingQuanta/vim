@@ -39,12 +39,12 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('waiting-for-dev/vim-www')
   call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['python']})
   "call dein#add('ivanov/vim-ipython', {'lazy': 1, 'on_ft': ['python']})
-  "call dein#add('scrooloose/syntastic', {'lazy': 1, 'on_ft': ['python']})
   "call dein#add('nvie/vim-flake8', {'lazy': 1, 'on_ft': ['python']})
   "call dein#add('vim-scripts/indentpython.vim', {'lazy': 1, 'on_ft': ['python']})
   call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
   call dein#add('wannesm/wmgraphviz.vim', {'lazy': 1, 'on_ft': ['dot']})
   call dein#add('nathangrigg/vim-beancount')
+  call dein#add('vim-syntastic/syntastic')
   call dein#end()
   call dein#save_state()
 endif
@@ -656,7 +656,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_debug=3
-"
+
 " Fix syntastic error jumping
 function! <SID>LocationPrevious()
   try
