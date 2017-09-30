@@ -22,3 +22,7 @@ nnoremap <buffer> <F4> :exec '!python' shellescape(@%, 1)<cr>
 
 let g:ale_python_pylint_executable = 'python3'
 let g:ale_python_pylint_options = '-rcfile $HOME/.pylintrc'
+
+let g:ale_fixers = {
+\   'python': ['autopep8', 'isort', 'remove_trailing_lines'],
+\}
