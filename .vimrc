@@ -646,6 +646,11 @@ function! s:unite_my_settings()
     imap <silent><buffer><expr> <C-s>     unite#do_action('split')
 endfunction
 
+" ALE
+" ale-navigation-commands
+nmap <silent> [e <Plug>(ale_previous_wrap)
+nmap <silent> ]e <Plug>(ale_next_wrap)
+
 " Actions in cygwin
 if has("win32unix")
   "set shellxquote = "("
