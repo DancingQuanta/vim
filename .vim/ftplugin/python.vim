@@ -18,3 +18,7 @@ let g:ultisnips_python_style='google'
 
 nnoremap <buffer> <F4> :exec '!python' shellescape(@%, 1)<cr>
 
+" ALE
+
+let g:ale_python_pylint_executable = 'python3'
+let g:ale_python_pylint_options = '-rcfile $HOME/.pylintrc'

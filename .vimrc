@@ -44,7 +44,7 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
   call dein#add('wannesm/wmgraphviz.vim', {'lazy': 1, 'on_ft': ['dot']})
   call dein#add('nathangrigg/vim-beancount')
-  call dein#add('vim-syntastic/syntastic')
+  call dein#add('w0rp/ale')
   call dein#end()
   call dein#save_state()
 endif
@@ -645,39 +645,6 @@ function! s:unite_my_settings()
     " Runs "split" action by <C-s>.
     imap <silent><buffer><expr> <C-s>     unite#do_action('split')
 endfunction
-
-"" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-let g:syntastic_python_pylint_args = '--rcfile=$HOME/.pylintrc' 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_debug=3
-
-" Fix syntastic error jumping
-function! <SID>LocationPrevious()
-  try
-    lprev
-  catch /^Vim\%((\a\+)\)\=:E553/
-    llast
-  endtry
-endfunction
-
-function! <SID>LocationNext()
-  try
-    lnext
-  catch /^Vim\%((\a\+)\)\=:E553/
-    lfirst
-  endtry
-endfunction
-
-nnoremap <silent> <Plug>LocationPrevious    :<C-u>exe 'call <SID>LocationPrevious()'<CR>
-nnoremap <silent> <Plug>LocationNext        :<C-u>exe 'call <SID>LocationNext()'<CR>
-nmap <silent> [e  <Plug>LocationPrevious
-nmap <silent> ]e  <Plug>LocationNext
 
 " Actions in cygwin
 if has("win32unix")
