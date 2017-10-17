@@ -18,3 +18,6 @@ let g:ultisnips_python_style='google'
 
 nnoremap <buffer> <F4> :exec '!python' shellescape(@%, 1)<cr>
 
+"" Syntastic
+let g:syntastic_python_pylint_args = '--rcfile=$HOME/.pylintrc' 
+
