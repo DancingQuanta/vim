@@ -32,6 +32,7 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('vim-pandoc/vim-pandoc-after')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
   call dein#add('dhruvasagar/vim-table-mode')", {'lazy': 1, 'on_ft': ['markdown','pandoc']}
   call dein#add('Rykka/riv.vim')
+  call dein#add('junegunn/goyo.vim', {'lazy': 1, 'on_ft': ['markdown','pandoc','restructuredtext']})
   call dein#add('waiting-for-dev/vim-www')
   call dein#add('python-mode/python-mode', {'lazy': 1, 'on_ft': ['python']})
   call dein#add('chrisbra/csv.vim', {'lazy': 1, 'on_ft': ['csv']})
