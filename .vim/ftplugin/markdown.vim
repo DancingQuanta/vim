@@ -26,3 +26,5 @@ let g:table_mode_header_fillchar="="
 " Citation.vim
 runtime shared/citation.vim
 
+" Prose
+runtime shared/prose.vim
