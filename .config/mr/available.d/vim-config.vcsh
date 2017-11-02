@@ -2,11 +2,13 @@
 ## vim-config.git
 ## Setup DancingQuanta/vim-config and dependant repositories
 
+### DEPENDENCIES - cloned via git
+# dein.vim
+[$HOME/.vim/dein/repos/github.com/Shougo/dein.vim]
+checkout = git clone https://github.com/Shougo/dein.vim &&
+    vim -c "call dein#install()"
+
 ### MAIN REPOSITORY - cloned via vcsh
 # vim-config
 [$HOME/.config/vcsh/repo.d/vim-config.git]
-checkout = vcsh clone https://github.com/DancingQuanta/vim-config &&
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh &&
-    sh ./installer.sh ~/.vim/dein &&
-    rm -f installer.sh &&
-    vim -c "call dein#update()"
+checkout = vcsh clone https://github.com/DancingQuanta/vim-config
