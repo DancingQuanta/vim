@@ -699,6 +699,8 @@ if has("win32unix")
 	endfunction
 
 	nnoremap <silent> <leader>v :call Getclip()<CR>
+  " Netrw
+	let g:netrw_browsex_viewer= "cygstart"
 endif
 
 syntax match nonascii "[^\x00-\x7F]"
