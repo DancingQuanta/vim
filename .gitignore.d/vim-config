@@ -1,7 +1,13 @@
 *
 !/.gitignore.d/
-!/.gitignore.d/vim
-!.vimrc
+!/.gitignore.d/vim-config
+!/.config
+!/.config/mr
+!/.config/mr/available.d
+!/.config/mr/available.d/vim-config.vcsh
+!/.config/mr/config.d
+!/.config/mr/config.d/vim-config.vcsh
+!/.vimrc
 !/.vim/
 !/.vim/UltiSnips/
 !/.vim/UltiSnips/*
