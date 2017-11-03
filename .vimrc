@@ -1,6 +1,7 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp^=~/.vim/dein/repos/github.com/Shougo/dein.vim " path to dein.vim
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " dein: {{{
 if dein#load_state(expand('~/.vim/dein'))
