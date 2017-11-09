@@ -568,10 +568,6 @@ let g:www_sessions = {
   \ }
 ":Wsession vim
 
-" Use google chrome
-let g:netrw_browsex_viewer = $CHROMEDIR/'chrome.exe'
-
-
 " Ultisnips
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
