@@ -41,6 +41,7 @@ if dein#load_state(expand('~/.vim/dein'))
   call dein#add('wannesm/wmgraphviz.vim', {'lazy': 1, 'on_ft': ['dot']})
   call dein#add('nathangrigg/vim-beancount')
   call dein#add('vim-syntastic/syntastic')
+  call dein#add('jamessan/vim-gnupg')
   call dein#end()
   call dein#save_state()
 endif
