@@ -16,5 +16,7 @@
 !/.vim/after/ftplugin/*
 !/.vim/ftplugin/
 !/.vim/ftplugin/*
+!/.vim/ftdetect/
+!/.vim/ftdetect/*
 !/.vim/shared/
 !/.vim/shared/*

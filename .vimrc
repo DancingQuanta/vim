@@ -704,6 +704,3 @@ endif
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=1 term=standout
 "au BufReadPost * syntax match nonascii "[^\u0000-\u007F]"
-syntax on
-filetype on
-au BufNewFile,BufRead *.tikz set filetype=tex
