@@ -57,17 +57,6 @@ if dein#check_install()
 endif
 "}}}
 
-" Changes
-" Visual mode
-" Map ; to v_: changed to _:
-"
-"}}}
-
-" Mappings: {{{
-"noremap <space> <leader>
-"noremap <space><space> <leader><leader>
-"nmap S :w!<CR>
-
 " hard tab
 inoremap <S-Tab> <C-V><Tab>
 " Get out of insert mode
